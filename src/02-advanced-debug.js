@@ -1,28 +1,27 @@
-console.log('Advanced debugging example running.')
-debugger
+console.log('Advanced debugging example running.');
+debugger;
 
 // first, define the function.
 function goodPractices() {
-  let game = gameObject();
-  for (let gameKey in game) {
-    // are you ABSOLUTELY SURE what 'gameKey' is?
-    // use the debugger to find out!
-    debugger
-    let teamObj = game[gameKey]
-    for (let teamKey in teamObj) {
-      // are you ABSOLUTELY SURE what 'teamKey' is?
-      // use debugger to find out!
-      debugger
+  const game = gameObject();
+  for (const gameKey in game) {
+    // Use debugger to check the value of 'gameKey'
+    debugger;
+    const teamObj = game[gameKey];
+    for (const teamKey in teamObj) {
+      // Use debugger to check the value of 'teamKey'
+      debugger;
 
-      // what is 'data' at each loop through out this block?
-      // when will the following line of code work and when will it break?
-      let data = teamObj.player
-      for (let key in data) {
-        debugger
+      // 'data' should be an object representing player stats, not a player's name
+      // Use debugger to investigate
+      const data = teamObj.players;
+      for (const playerName in data) {
+        // Use debugger to check each player's stats
+        debugger;
       }
     }
   }
 }
 
-// then, call the function so it runs!
-goodPractices()
+// Call the function to run it
+goodPractices();
